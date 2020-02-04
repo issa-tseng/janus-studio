@@ -1,0 +1,87 @@
+@import './common'
+
+.atom
+  position: relative
+
+  .atom-name input
+    @include no-appearance
+    font-family: $font-monospace
+
+    &::placeholder
+      color: #bbb
+
+  .atom-code
+    background: $color-page-bg
+    border-bottom: 1px dotted #f0f0f0
+    border-top: 1px dotted #f0f0f0
+    margin: 0.5em -1em
+    padding: 0.5em 1em
+
+  .atom-result
+    padding: 0.4em
+      bottom: 0
+    .janus-inspect-entity
+      font-size: 1.1em
+
+  ////////////////////////////////////////
+  // button things
+
+  button
+    @include no-appearance
+    font-size: 1.3em
+    position: absolute
+
+  button
+    opacity: 0
+    transition: opacity 0.3s ease-out
+  &:hover button
+    opacity: 0.08
+    transition: none
+  button:hover
+    opacity: 1
+
+  &:hover + .atom .atom-insert
+    opacity: 0.08
+    transition: none
+
+  .atom-insert
+    display: block
+    left: 0
+    top: -0.75em
+    width: 100%
+    &::before, &::after
+      @include reify
+      border-top: 1px solid #000
+      position: absolute
+      top: 0.7em
+      width: calc(50% - 0.8em)
+    &::before
+      left: 0
+    &::after
+      right: 0
+
+  .atom-remove, .atom-panel button
+    padding: 0 0.3em
+  .atom-remove
+    right: 0.4em
+    top: 0.4em
+  .atom-panel button
+    bottom: 0.8em
+    right: 0.3em
+
+  ////////////////////////////////////////
+  // state toggles
+
+  &.is-panel .atom-panel button
+    color: #d8009e
+    opacity: 1
+
+  .atom-panel
+    display: none
+  &.has-result .atom-panel
+    display: block
+
+
+.assembly .atom
+  padding: 1em
+
