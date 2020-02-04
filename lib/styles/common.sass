@@ -1,0 +1,32 @@
+
+////////////////////////////////////////////////////////////////////////////////
+// K
+
+$font-main: 'helvetica neue', helvetica, arial
+$font-monospace: menlo, monaco, inconsolata, consolas, monospace
+
+$subtle-shadow: 0 0.3em 0.5em rgba(0, 0, 0, 0.12)
+$ease-extreme-out: cubic-bezier(.05, .9, 0, 1)
+
+
+////////////////////////////////////////////////////////////////////////////////
+// UTIL
+
+@mixin fill($buffer: 0)
+  bottom: $buffer
+  left: $buffer
+  position: absolute
+  right: $buffer
+  top: $buffer
+
+@mixin reify
+  content: ''
+  display: block
+
+@mixin no-appearance
+  background: none
+  border: none
+  margin: 0
+  outline: none
+  padding: 0
+
