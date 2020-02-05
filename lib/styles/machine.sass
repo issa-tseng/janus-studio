@@ -3,24 +3,38 @@
 .atom
   position: relative
 
-  .atom-name input
+  .atom-name-edit input
     @include no-appearance
     font-family: $font-monospace
+    padding-top: 0.1em
+    position: absolute
 
     &::placeholder
-      color: #bbb
+      color: #ccc
 
   .atom-code
     background: $color-page-bg
     border-bottom: 1px dotted #f0f0f0
     border-top: 1px dotted #f0f0f0
-    margin: 0.5em -1em
+    margin: 0 -1em 0.5em
     padding: 0.5em 1em
 
-  .atom-result
+  .atom-lower
     padding: 0.4em
       bottom: 0
-    .janus-inspect-entity
+    position: relative
+
+  .atom-name
+    font-family: $font-monospace
+    font-size: 1.1em
+    padding-right: 0.3em
+    .name
+      visibility: hidden
+    .binding
+      padding-left: 0.5em
+
+  .atom-result
+    > .janus-inspect-entity, > .janus-literal
       font-size: 1.1em
 
   ////////////////////////////////////////
@@ -64,22 +78,27 @@
     padding: 0 0.3em
   .atom-remove
     right: 0.4em
-    top: 0.4em
+    top: 0.05em
   .atom-panel button
-    bottom: 0.8em
-    right: 0.3em
+    right: -0.45em
+    top: 0.2em
 
   ////////////////////////////////////////
   // state toggles
 
   &.is-panel .atom-panel button
-    color: #d8009e
+    color: $color-accent
     opacity: 1
 
   .atom-panel
     display: none
   &.has-result .atom-panel
     display: block
+
+  .atom-name .binding
+    color: #ccc
+  &.has-name .atom-name .binding
+    color: #666
 
 
 .assembly .atom
