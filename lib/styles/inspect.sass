@@ -33,6 +33,14 @@
   .panel-handle:hover
     opacity: 1
 
+  .panel-handle::before
+    $overhang: -0.5em
+    @include reify
+    bottom: $overhang
+    position: absolute
+    top: $overhang
+    width: 100%
+
   .panel-derivation
     margin: -0.5em 0.9em 0.5em
 
