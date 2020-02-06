@@ -3,6 +3,7 @@
 .assembly
   padding: 1em
     top: 0
+  position: relative
 
   .assembly-name input
     @include no-appearance
@@ -17,4 +18,25 @@
     border-radius: 0.35em
     box-shadow: $subtle-shadow
     width: 40em
+
+  .assembly-stacks
+    @include fill
+    left: 42em
+
+.stack
+  float: left
+  padding: 0 0.5em
+  width: 30em
+
+  h1 input
+    @include no-appearance
+    color: #444
+    font-size: 1em
+    font-weight: bold
+    letter-spacing: -0.02em
+    margin-top: 0.5em
+
+  .stack-members
+    height: calc(100vh - 10em) // TODO: centralize this measurement.
+    margin-top: 0.9em
 

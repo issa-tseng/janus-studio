@@ -30,13 +30,11 @@
     width: 6em
 
   &::after // drag affordance
-    border-bottom: 1px solid #ddd
-    border-top: 1px solid #ddd
-    height: 0.5em
+    @include drag-affordance
     left: 8em
     opacity: 0
     top: 1.5em
-    width: 7em
+    width: 7.1em // extra pixel so the dots work out.
 
   ////////////////////////////////////////
   // state toggles
