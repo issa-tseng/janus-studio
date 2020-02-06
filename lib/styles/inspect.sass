@@ -1,5 +1,8 @@
 @import './common'
 
+////////////////////////////////////////
+// general panel
+
 .janus-inspect-panel
   background: #fff
   border-radius: 0.35em
@@ -35,6 +38,25 @@
     border-top: 1px dotted #f0f0f0
     padding: 0.6em 1em
 
+
+////////////////////////////////////////
+// highlight
+
+.janus-inspect-entity.highlight
+  .entity-title, .entity-content::before, .entity-content::after
+    color: $color-accent
+
+.janus-inspect-entity .entity-title:hover + .entity-content
+  &::before, &::after
+    color: $color-accent
+
+.janus-inspect-panel.highlight:not(:hover)
+  box-shadow: 0 0 0 0.1em $color-accent !important
+
+
+////////////////////////////////////////
+// pairs
+
 .data-pair
   .pair-key, .pair-delimeter, .pair-value
     font-size: 1.1em
@@ -53,6 +75,10 @@
   .pair-clear:hover
     opacity: 1
 
+
+////////////////////////////////////////
+// model inspector
+
 .janus-inspect-model
   .model-add
     @include no-appearance
@@ -61,4 +87,5 @@
     padding: 0.2em 0.4em
     &::before
       content: '+'
+
 
