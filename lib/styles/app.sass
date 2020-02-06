@@ -5,6 +5,10 @@
 @import './machine'
 @import './cm'
 
+
+////////////////////////////////////////
+// reset
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
 font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
@@ -31,9 +35,16 @@ html, body
 input[type=text]
   cursor: text
 
+
+////////////////////////////////////////
+// app globals
+
 .hide
   display: none !important
 
+
+////////////////////////////////////////
+// dragging globals
 
 .dragging
   position: relative
@@ -44,4 +55,21 @@ input[type=text]
   transform: translateY(-6px)
 .drag-before
   transform: translateY(6px)
+
+.dropped
+  animation-timing-function: ease-out
+  animation-duration: 0.2s
+  animation-iteration-count: 1
+  animation-name: dropped
+
+@keyframes dropped
+  0%
+    transform: translateY(-6px)
+    transition: none
+  50%
+    transform: translateY(3px)
+    transition: none
+  100%
+    transform: translateY(0)
+    transition: none
 
