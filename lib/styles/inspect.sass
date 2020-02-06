@@ -47,12 +47,18 @@
 // highlight
 
 .janus-inspect-entity.highlight
+  background: $color-accent
+  border-radius: 0.1em
+  box-shadow: 0 0 0 0.2em $color-accent
   .entity-title, .entity-content::before, .entity-content::after
-    color: $color-accent
+    color: #fff
+
+  .entity-content .model-pairs
+    color: #ddd
 
 .janus-inspect-entity .entity-title:hover + .entity-content
   &::before, &::after
-    color: $color-accent
+    color: #fff
 
 .janus-inspect-panel.highlight:not(:hover)
   box-shadow: 0 0 0 0.1em $color-accent !important
