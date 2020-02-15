@@ -95,6 +95,35 @@
 
 
 ////////////////////////////////////////
+// domview inspector
+
+.janus-inspect-domview
+  .domview-flash
+    display: none
+
+  .mutation
+    font-size: 1.1em
+
+    .mutation-selector
+      color: $color-accent
+      font-family: $font-monospace
+    .mutation-type
+      padding: 0.2em 0 0.4em 0.7em
+
+  .domview-display-label
+    font-weight: bold
+    padding: 1em 0 0.3em
+
+////////////////////////////////////////
+// function inspector
+
+.janus-inspect-function
+  .panel-handle
+    display: none
+  .function-body
+    font-size: 1.2em
+
+////////////////////////////////////////
 // model inspector
 
 .janus-inspect-model
@@ -106,4 +135,31 @@
     &::before
       content: '+'
 
+////////////////////////////////////////
+// varying inspector
+
+.janus-inspect-varying
+  .varying-bar
+    background-color: #fff
+    border-bottom: 1px dotted #ccc
+    margin: 0 -1em
+    padding: 0.4em 1em
+    label
+      float: left
+      font-weight: bold
+      padding-right: 0.6em
+    &:first-child
+      margin-top: -0.7em
+      padding-top: 0
+
+  .varying-reaction-bar
+    margin-bottom: 1em
+    padding-bottom: 0.7em
+
+  .varying-observations, .varying-reactions
+    display: inline
+
+  .varying-reactions
+    .reaction
+      display: inline-block
 
