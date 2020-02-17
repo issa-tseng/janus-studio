@@ -51,19 +51,21 @@
 
   ////////////////////////////////////////
   // button things
+  // TODO: the classing here is a bit of a mess.
 
-  button
-    @include no-appearance
+  > button, .atom-panel button
     font-size: 1.3em
+    opacity: 0
     position: absolute
 
   button
-    opacity: 0
+    @include no-appearance
     transition: opacity 0.3s ease-out
-  &:hover button
-    opacity: 0.08
-    transition: none
-  button:hover
+  &:hover
+    > button, .atom-panel button
+      opacity: 0.08
+      transition: none
+  button:hover, .atom-panel button:hover
     opacity: 1
 
   &:hover + .atom .atom-insert

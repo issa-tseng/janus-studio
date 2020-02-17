@@ -79,9 +79,6 @@
   .pair-key, .pair-delimeter, .pair-value
     font-size: 1.1em
 
-  .pair-key
-    font-weight: bold
-
   .pair-clear
     @include no-appearance
     font-size: 1.3em
@@ -92,6 +89,19 @@
     transition: none
   .pair-clear:hover
     opacity: 1
+
+  .pair-value .janus-literal
+    font-size: 1.1em
+
+.janus-inspect-model .pair-key
+  font-weight: bold
+
+.janus-inspect-list
+  .data-pair .pair-key
+    color: #aaa
+    margin-right: 0.3em
+  .data-pair:nth-child(5n + 1) .pair-key
+    color: #555
 
 
 ////////////////////////////////////////
@@ -114,6 +124,7 @@
     font-weight: bold
     padding: 1em 0 0.3em
 
+
 ////////////////////////////////////////
 // function inspector
 
@@ -122,6 +133,20 @@
     display: none
   .function-body
     font-size: 1.2em
+
+
+////////////////////////////////////////
+// list inspector
+
+.janus-inspect-list
+  .list-more
+    @include no-appearance
+    display: none
+    &.has-more
+      display: inline-block
+  &.janus-inspect-panel .list-more
+    padding: 0.8em 0
+
 
 ////////////////////////////////////////
 // model inspector
@@ -135,10 +160,13 @@
     &::before
       content: '+'
 
+
 ////////////////////////////////////////
 // varying inspector
 
 .janus-inspect-varying
+  .panel-derivation
+    padding-bottom: 0.4em
   .varying-bar
     background-color: #fff
     border-bottom: 1px dotted #ccc
