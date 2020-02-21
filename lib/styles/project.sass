@@ -108,6 +108,24 @@
       transition: 0.7s transform $ease-extreme-out
 
 .block
+  position: relative
+
+  .block-delete
+    // TODO: repetitive with at least .block-run/.console-clear
+    @include no-appearance
+    opacity: 0
+    padding: 0.3em 0.6em
+    position: absolute
+    right: 0.25em
+    top: 0.25em
+    transition: 0.3s opacity ease-out
+    z-index: 1
+  &:hover .block-delete
+    opacity: 0.3
+    transition: none
+  .block-delete:hover
+    opacity: 1
+
   &.type-reference
     .block-handle, .block-title, .block-code, .block-run
       display: none
@@ -118,7 +136,6 @@
     border-radius: 0.35em
     box-shadow: $subtle-shadow
     padding: 1em
-    position: relative
 
     // TODO: copied from panel
     .block-handle
