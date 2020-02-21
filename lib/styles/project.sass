@@ -85,7 +85,7 @@
 
 .block
   &.type-reference
-    .block-title, .block-code, .block-run
+    .block-handle, .block-title, .block-code, .block-run
       display: none
 
   &.type-action
@@ -94,6 +94,24 @@
     border-radius: 0.35em
     box-shadow: $subtle-shadow
     padding: 1em
+    position: relative
+
+    // TODO: copied from panel
+    .block-handle
+      $width: 6em
+      @include drag-affordance(#888)
+      height: 0.3em
+      left: calc(50% - #{$width / 2})
+      opacity: 0
+      position: absolute
+      top: 0.8em
+      transition: 0.3s opacity ease-out
+      width: $width + 0.1em
+    &:hover .block-handle
+      opacity: 0.3
+      transition: none
+    .block-handle:hover
+      opacity: 1
 
     .block-title
       color: $color-action
