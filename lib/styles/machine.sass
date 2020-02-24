@@ -5,6 +5,7 @@
 
   .atom-name-edit input
     @include no-appearance
+    color: $color-binding
     font-family: $font-monospace
     padding-top: 0.1em
     position: absolute
@@ -117,4 +118,42 @@
 
 .assembly .atom
   padding: 1em
+
+
+////////////////////////////////////////
+// valuator
+// (TODO: probably not here?)
+
+.valuator
+  @include panel(valuator)
+  width: 30em
+
+  .valuator-pair
+    font-size: 1.1em
+    padding-bottom: 0.3em
+    .k
+      color: $color-binding
+    .k, .eq
+      font-family: $font-monospace
+
+  .valuator-result
+    font-size: 1.1em
+    padding: 0.3em 0
+
+    .janus-inspect-panel
+      // TODO: copied from atom
+      border: 1px dotted #ddd
+      box-shadow: none
+      margin: 0 -0.6em 1.8em
+
+  .valuator-offer
+    @include no-appearance
+    bottom: 0.7em
+    display: none
+    font-size: 1.4em
+    padding: 0 0.2em
+    position: absolute
+    right: 0.5em
+  &.offerable .valuator-offer
+    display: block
 

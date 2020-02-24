@@ -54,10 +54,19 @@ input[type=text]
 
   .flyout
     position: absolute
-    z-index: 9999
+    z-index: $z-high-af
 
     .janus-inspect-panel
       min-width: 30em
+
+.stickies
+  left: 0
+  position: absolute
+  top: 0
+
+  .sticky
+    position: absolute
+    z-index: $z-high-af
 
 
 ////////////////////////////////////////
@@ -80,16 +89,4 @@ input[type=text]
   animation-duration: 0.2s
   animation-iteration-count: 1
   animation-name: dropped
-
-@keyframes dropped
-  0%
-    transform: translateY(-6px)
-    transition: none
-  50%
-    transform: translateY(3px)
-    transition: none
-  99%
-    transform: translateY(0)
-    transition: none
-  100%
 

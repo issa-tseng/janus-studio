@@ -131,11 +131,7 @@
       display: none
 
   &.type-action
-    // TODO: copied from panel
-    background-color: #fff
-    border-radius: 0.35em
-    box-shadow: $subtle-shadow
-    padding: 1em
+    @include panel(block)
 
     // TODO: copied from panel
     .block-handle
@@ -158,17 +154,6 @@
       color: $color-action
       font-family: $font-monospace
       font-size: 1.1em
-
-    .block-code
-      background: $color-page-bg
-      border-bottom: 1px dotted #f0f0f0
-      border-top: 1px dotted #f0f0f0
-      cursor: text
-      margin: 1em -1em 0.5em
-      padding: 0.5em 1em
-
-      *
-        cursor: text
 
     .block-run
       @include no-appearance

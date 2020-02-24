@@ -6,7 +6,8 @@ $font-main: 'helvetica neue', helvetica, arial
 $font-monospace: menlo, monaco, inconsolata, consolas, monospace
 
 $color-accent: #d8009e
-$color-action: #0bcfd0
+$color-action: #09c782
+$color-binding: #3290e2
 $color-inspect: #a9067d
 $color-page-bg: #f7f7f7
 
@@ -38,8 +39,29 @@ $z-high-af: 9999
   outline: none
   padding: 0
 
+
+////////////////////////////////////////////////////////////////////////////////
+// shared
+
 @mixin drag-affordance($color: #ccc)
   border-bottom: 1px dotted $color
   border-top: 1px dotted $color
   height: 0.5em
+
+@mixin panel($prefix)
+  background-color: #fff
+  border-radius: 0.35em
+  box-shadow: $subtle-shadow
+  padding: 1em
+
+  .#{$prefix}-code
+    background: $color-page-bg
+    border-bottom: 1px dotted #f0f0f0
+    border-top: 1px dotted #f0f0f0
+    cursor: text
+    margin: 1em -1em 0.5em
+    padding: 0.5em 1em
+
+    *
+      cursor: text
 
