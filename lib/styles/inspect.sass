@@ -133,6 +133,8 @@
 .janus-inspect-function
   .panel-handle
     display: none
+  .function-args.given
+    margin-bottom: 0.8em
   .function-body
     font-size: 1.2em
 
@@ -192,8 +194,34 @@
   .varying-reactions
     .reaction
       display: inline-block
+      line-height: 2em
       &::before
         content: '→'
       + .reaction.target-changed::before
         padding: 0 0.3em
+      &.target-changed .rxn-value > span
+        line-height: 0.8em
+
+  .varying-observations
+    .janus-inspect-function
+      &::after
+        content: ', '
+      &:last-child::after
+        content: none
+
+  .varying-snapshot
+    background: #fadd00
+    margin: -1em
+      bottom: 1em
+    padding: 0.5em 1em
+    position: relative
+    .varying-snapshot-close
+      @include no-appearance
+      font-size: 1.5em
+      padding: 0 0.3em
+      position: absolute
+      right: 0
+      top: 0
+      &::before
+        content: '×'
 
