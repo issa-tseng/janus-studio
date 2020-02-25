@@ -1,6 +1,15 @@
 @import './common'
 
 ////////////////////////////////////////
+// general entity
+
+.janus-inspect-entity
+  &:hover, &.highlight
+    span
+      color: #fff
+
+
+////////////////////////////////////////
 // general panel
 
 .janus-inspect-panel
@@ -174,11 +183,12 @@
   .varying-bar
     background-color: #fff
     border-bottom: 1px dotted #ccc
+    line-height: 2em
     margin: 0 -1em
     padding: 0.4em 1em
     label
+      color: $color-accent
       float: left
-      font-weight: bold
       padding-right: 0.6em
     &:first-child
       margin-top: -0.7em
@@ -197,7 +207,6 @@
       line-height: 2em
       &::before
         content: '→'
-      + .reaction.target-changed::before
         padding: 0 0.3em
       &.target-changed .rxn-value > span
         line-height: 0.8em
