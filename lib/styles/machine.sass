@@ -1,9 +1,9 @@
 @import './common'
 
-.atom
+.statement
   position: relative
 
-  .atom-name-edit input
+  .statement-name-edit input
     @include no-appearance
     color: $color-binding
     font-family: $font-monospace
@@ -13,7 +13,7 @@
     &::placeholder
       color: #ccc
 
-  .atom-code
+  .statement-code
     background: $color-page-bg
     border-bottom: 1px dotted #f0f0f0
     border-top: 1px dotted #f0f0f0
@@ -24,12 +24,12 @@
     *
       cursor: text
 
-  .atom-lower
+  .statement-lower
     padding: 0.4em
       bottom: 0
     position: relative
 
-  .atom-name
+  .statement-name
     font-family: $font-monospace
     font-size: 1.1em
     padding-right: 0.3em
@@ -38,7 +38,7 @@
     .binding
       padding-left: 0.5em
 
-  .atom-result
+  .statement-result
     position: relative
     z-index: 1 // TODO: centralize?
 
@@ -54,7 +54,7 @@
   // button things
   // TODO: the classing here is a bit of a mess.
 
-  > button, .atom-panel button
+  > button, .statement-panel button
     font-size: 1.3em
     opacity: 0
     position: absolute
@@ -63,17 +63,17 @@
     @include no-appearance
     transition: opacity 0.3s ease-out
   &:hover
-    > button, .atom-panel button
+    > button, .statement-panel button
       opacity: 0.08
       transition: none
-  button:hover, .atom-panel button:hover
+  button:hover, .statement-panel button:hover
     opacity: 1
 
-  &:hover + .atom .atom-insert
+  &:hover + .statement .statement-insert
     opacity: 0.08
     transition: none
 
-  .atom-insert
+  .statement-insert
     display: block
     left: 0
     top: -0.75em
@@ -89,78 +89,34 @@
     &::after
       right: 0
 
-  .atom-remove, .atom-panel button
+  .statement-remove, .statement-panel button
     padding: 0 0.3em
-  .atom-remove
+  .statement-remove
     right: 0.4em
     top: 0.05em
-  .atom-panel button
+  .statement-panel button
     right: -0.45em
     top: 0.2em
 
   ////////////////////////////////////////
   // state toggles
 
-  &.is-panel .atom-panel button
+  &.is-panel .statement-panel button
     color: $color-accent
     opacity: 1
 
-  .atom-panel
+  .statement-panel
     display: none
-  &.has-result .atom-panel
+  &.has-result .statement-panel
     display: block
 
-  .atom-name .binding
+  .statement-name .binding
     color: #ccc
-  &.has-name .atom-name .binding
+  &.has-name .statement-name .binding
     color: #666
 
 
-.assembly .atom
+.assembly .statement
   padding: 1em
 
-
-////////////////////////////////////////
-// valuator
-// (TODO: probably not here?)
-
-.valuator
-  @include panel(valuator)
-  width: 30em
-
-  .valuator-close
-    @include no-appearance
-    padding: 0.35em 0.7em
-    position: absolute
-    right: 0
-    top: 0
-
-  .valuator-pair
-    font-size: 1.1em
-    padding-bottom: 0.3em
-    .k
-      color: $color-binding
-    .k, .eq
-      font-family: $font-monospace
-
-  .valuator-result
-    font-size: 1.1em
-    padding: 0.3em 0
-
-    .janus-inspect-panel
-      // TODO: copied from atom
-      border: 1px dotted #ddd
-      box-shadow: none
-      margin: 0 -0.6em 1.8em
-
-  .valuator-offer
-    @include no-appearance
-    bottom: 0.7em
-    display: none
-    font-size: 1.4em
-    padding: 0 0.2em
-    position: absolute
-    right: 0.5em
-  &.offerable .valuator-offer
-    display: block
 

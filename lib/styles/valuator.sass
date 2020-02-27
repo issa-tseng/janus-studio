@@ -1,0 +1,43 @@
+@import './common'
+
+.valuator
+  @include panel(valuator)
+  width: 30em
+
+  .valuator-close
+    @include no-appearance
+    padding: 0.35em 0.7em
+    position: absolute
+    right: 0
+    top: 0
+
+  .valuator-pair
+    font-size: 1.1em
+    padding-bottom: 0.3em
+    .k
+      color: $color-binding
+    .k, .eq
+      font-family: $font-monospace
+
+  .valuator-result
+    font-size: 1.1em
+    padding: 0.3em 0
+
+    .janus-inspect-panel
+      // TODO: copied from statement
+      border: 1px dotted #ddd
+      box-shadow: none
+      margin: 0 -0.6em 1.8em
+
+  .valuator-offer
+    @include no-appearance
+    bottom: 0.7em
+    display: none
+    font-size: 1.4em
+    padding: 0 0.2em
+    position: absolute
+    right: 0.5em
+  &.offerable .valuator-offer
+    display: block
+
+
