@@ -49,7 +49,59 @@
 
 #tabs
   left: 17em
+  overflow: hidden
+  overflow-x: auto
+  position: absolute
+  top: 0
+  white-space: nowrap
+  width: calc(100vw - 20em)
+
+  &::-webkit-scrollbar
+    display: none
+
+  .tab
+    color: #444
+    display: inline-block
+    font-family: system-ui
+    font-size: 1.2em
+    letter-spacing: -0.02em
+    opacity: 0.7
+    padding: 0.9em 0
+    text-align: center
+    transition: 0.15s width $ease-extreme-out, 0.3s opacity
+    &:hover
+      opacity: 1
+      transition: 0.15s width $ease-extreme-out
+    &.checked
+      box-shadow: 0 1px 0 $color-accent inset
+      color: #000
+      opacity: 1
+
+    .tab-close
+      @include no-appearance
+      opacity: 0
+      padding: 0.3em 0.5em
+      transition: 0.3s opacity
+    &:hover .tab-close
+      opacity: 0.3
+      transition: none
+    .tab-close:hover
+      opacity: 1
+
+  @for $i from 1 through 20
+    &.count-#{$i} .tab
+      width: (100% / $i)
+
+#new-tab
+  @include no-appearance
+  font-size: 1.4em
+  padding: 0.7em 1em
   position: absolute
   right: 0
   top: 0
+  transition: 0.5s color
+
+  &:hover
+    color: $color-accent
+    transition: none
 
