@@ -1,0 +1,58 @@
+@import './common'
+
+.browser-project
+  padding: 2em
+
+  .browser-project-name
+    font-size: 4em
+
+  .browser-assemblies
+    padding-top: 2em
+
+.browser-assembly
+  background-color: #fff
+  border-radius: 0.35em
+  box-shadow: $subtle-shadow
+  padding: 1em
+  height: 12em
+  width: 20em
+
+  .browser-assembly-name
+    color: $color-accent
+    font-family: $font-monospace
+    font-size: 1.4em
+
+  .browser-assembly-bindings
+    padding-top: 0.5em
+
+    .janus-literal
+      color: $color-binding
+      font-family: $font-monospace
+      font-size: 1.1em
+      &::after
+        color: #999
+        content: ', '
+      &:last-child::after
+        display: none
+
+  .browser-assembly-stacks
+    height: 8em
+    overflow: hidden
+    padding-top: 0.5em
+    width: 20em
+
+    > .janus-list
+      height: 100em
+      width: 100em
+
+      > .janus-list
+        float: left
+        width: 3em
+
+        .box
+          border: 1px solid #eee
+          border-radius: 0.35em
+          height: 2em
+          margin-bottom: 0.5em
+          width: 2.5em
+
