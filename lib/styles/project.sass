@@ -23,6 +23,31 @@
     left: 42em
     top: 3.5em
 
+    .new-stack
+      @include no-appearance
+      font-size: 1.4em
+      margin-top: 1em
+      opacity: 0.6
+      padding: 0 0.4em calc(100vh - 6em)
+      position: relative
+      transition: 0.3s opacity
+      &::after
+        @include reify
+        border-left: 1px solid #ddd
+        box-shadow: -1px 0 0 #888
+        bottom: 0
+        left: 0.68em
+        opacity: 0
+        position: absolute
+        top: 1.3em
+        transition: 0.3s opacity
+      &:hover
+        opacity: 1
+        transition: none
+      &:hover::after
+        opacity: 1
+        transition: none
+
   .console
     background: rgba(200, 200, 200, 0.9)
     border-radius: 0.3em 0.3em 0 0
