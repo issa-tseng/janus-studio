@@ -1,0 +1,113 @@
+@import './common'
+
+
+.stack
+  float: left
+  padding: 0 0.5em
+  position: relative
+  width: 30em
+
+  h1 input
+    @include no-appearance
+    color: #444
+    font-size: 1em
+    font-weight: bold
+    letter-spacing: -0.02em
+    margin-top: 0.5em
+
+  .stack-remove
+    @include no-appearance
+    font-size: 1.4em
+    opacity: 0
+    padding: 0 0.3em
+    position: absolute
+    right: 0
+    top: 1em
+    transition: 0.3s opacity
+  &:hover .stack-remove
+    opacity: 0.3
+    transition: none
+  .stack-remove:hover
+    opacity: 1
+
+  .stack-blocks
+    height: calc(100vh - 10em) // TODO: centralize this measurement.
+    margin-top: 0.9em
+
+    > .janus-list > .block
+      margin-bottom: 1.5em
+      transition: 0.7s transform $ease-extreme-out
+
+.block
+  position: relative
+
+  .block-delete
+    // TODO: repetitive with at least .block-run/.console-clear
+    @include no-appearance
+    opacity: 0
+    padding: 0.3em 0.6em
+    position: absolute
+    right: 0.25em
+    top: 0.25em
+    transition: 0.3s opacity ease-out
+    z-index: 1
+  &:hover .block-delete
+    opacity: 0.3
+    transition: none
+  .block-delete:hover
+    opacity: 1
+
+  &.type-reference
+    .block-handle, .block-title, .block-code, .block-run
+      display: none
+
+  &.type-action
+    @include panel(block)
+
+    // TODO: copied from panel
+    .block-handle
+      $width: 6em
+      @include drag-affordance(#888)
+      height: 0.3em
+      left: calc(50% - #{$width / 2})
+      opacity: 0
+      position: absolute
+      top: 0.8em
+      transition: 0.3s opacity ease-out
+      width: $width + 0.1em
+    &:hover .block-handle
+      opacity: 0.3
+      transition: none
+    .block-handle:hover
+      opacity: 1
+
+    .block-title
+      color: $color-action
+      font-family: $font-monospace
+      font-size: 1.1em
+
+    .block-run
+      @include no-appearance
+      font-size: 2.6em
+      line-height: 0.3em
+      padding: 0.3em
+      position: absolute
+      right: 0.3em
+      margin-top: -0.7em
+
+    &.stale .block-target
+      filter: grayscale(0.7)
+      opacity: 0.7
+
+    .janus-inspect-panel
+      // TODO: copied from statement
+      border: 1px dotted #ddd
+      box-shadow: none
+      margin: 1em -0.6em 0
+
+.console-output .block
+  animation-duration: 1s
+  animation-iteration-count: 1
+  animation-name: slide-up
+  animation-timing-function: $ease-extreme-out
+
