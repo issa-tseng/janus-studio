@@ -92,3 +92,56 @@ input[type=text]
   animation-iteration-count: 1
   animation-name: dropped
 
+
+////////////////////////////////////////
+// exceptions (TODO: move elsewhere)
+
+.exception
+  background: $color-error
+  border-radius: 0.35em
+  color: #fff
+  padding: 0.8em 1em
+  position: relative
+
+  .exception-message
+    font-family: $font-monospace
+    font-size: 1.2em
+    padding-bottom: 0.3em
+
+  .stack-line
+    color: #ccc
+    margin-bottom: 0.1em
+    .stack-line-context
+      color: #fff
+    a
+      color: #ccc
+      text-decoration: none
+
+  .exception-expando button
+    @include no-appearance
+    height: 1.3em
+    padding: 0.3em
+    position: absolute
+    right: 0.3em
+    top: 0.3em
+    width: 1.3em
+
+    &::before
+      $size: 0.5em
+      @include reify
+      border-bottom: 1px solid #fff
+      border-right: 1px solid #fff
+      height: $size
+      transform: rotate(45deg)
+      width: $size
+
+  .exception-stack .stack-line
+    display: none
+  .exception-stack .stack-line:first-child
+    display: block
+  &.expanded
+    .exception-stack .stack-line
+      display: block
+    .exception-expando button::before
+      transform: translateY(0.3em) rotate(225deg)
+
