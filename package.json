@@ -20,6 +20,6 @@
   },
   "devDependencies": {
     "electron": "~7",
-    "node-sass": "~4"
+    "node-sass": "~7"
   }
 }
