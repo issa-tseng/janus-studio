@@ -19,7 +19,7 @@
     "uuid": "~3"
   },
   "devDependencies": {
-    "electron": "~7",
+    "electron": "~18",
     "node-sass": "~4"
   }
 }
