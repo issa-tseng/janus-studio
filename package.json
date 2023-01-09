@@ -14,7 +14,7 @@
     "janus-inspect": "~0.5",
     "janus-stdlib": "~0.5",
     "jquery": "~3",
-    "luxon": "^1.22.0",
+    "luxon": "^2.5.2",
     "minimatch": "~3",
     "uuid": "~3"
   },
